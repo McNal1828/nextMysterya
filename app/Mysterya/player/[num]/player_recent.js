@@ -1,9 +1,23 @@
 'use client';
 import useSWR from 'swr';
 import styles from './content.module.css';
+import { Recent_5, Total, calc } from './calc';
+
 export default function PlayerRecent({ player_number }) {
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());
+	console.log(player_number);
 	const { data, error, isLoading } = useSWR(`/api/mysterya/player/status/${player_number}`, fetcher);
+	if (error) {
+		return <></>;
+	}
+	if (isLoading) {
+		return <></>;
+	}
+	const personal_recent_1 = data[0].recent;
+	const personal_recent_5_data = data.filter(
+		(obj) => obj.recent in [personal_recent_1, personal_recent_1 + 1, personal_recent_1 + 2, personal_recent_1 + 3, personal_recent_1 + 4]
+	);
+	const personal_recent_1_data = personal_recent_5_data.filter((obj) => obj.recent == personal_recent_1);
 	return (
 		<>
 			<div className={styles.content}>
@@ -24,15 +38,23 @@ export default function PlayerRecent({ player_number }) {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
-							<td>4</td>
-							<td>5</td>
-							<td>6</td>
-							<td>7</td>
-						</tr>
+						{personal_recent_1_data.map((data, index) => (
+							<tr key={index}>
+								<td>
+									{data.game_score} &nbsp;&nbsp;&nbsp; {data.inning}이닝
+								</td>
+								<td>{data.hit_result ? data.hit_result : data.result}</td>
+								<td>{data.final}</td>
+								<td>{data.strike}</td>
+								<td>{data.ball}</td>
+								<td>{data.out_count}</td>
+								<td>
+									{data.base3 ? 'O' : 'X'}
+									{data.base2 ? 'O' : 'X'}
+									{data.base1 ? 'O' : 'X'}
+								</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 				<div className={styles.title}>
@@ -42,39 +64,24 @@ export default function PlayerRecent({ player_number }) {
 				<table className={styles.table}>
 					<thead>
 						<tr>
-							<th>경기수</th>
+							<th>경기</th>
 							<th>타석</th>
 							<th>타수</th>
 							<th>타율</th>
+							<th>출루율</th>
 							<th>안타</th>
-							<th>2루타</th>
-							<th>3루타</th>
-							<th>홈런</th>
+							<th>장타</th>
 							<th>삼진</th>
 							<th>4구</th>
 							<th>사구</th>
-							<th>장타율</th>
-							<th>출루율</th>
-							<th>OPS</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
-							<td>4</td>
-							<td>5</td>
-							<td>6</td>
-							<td>7</td>
-							<td>8</td>
-							<td>9</td>
-							<td>0</td>
-							<td>-</td>
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
-						</tr>
+						<Recent_5 data={personal_recent_5_data} recent={personal_recent_1} />
+						<Recent_5 data={personal_recent_5_data} recent={personal_recent_1 + 1} />
+						<Recent_5 data={personal_recent_5_data} recent={personal_recent_1 + 2} />
+						<Recent_5 data={personal_recent_5_data} recent={personal_recent_1 + 3} />
+						<Recent_5 data={personal_recent_5_data} recent={personal_recent_1 + 4} />
 					</tbody>
 				</table>
 				<div className={styles.title}>
@@ -88,6 +95,8 @@ export default function PlayerRecent({ player_number }) {
 							<th>타석</th>
 							<th>타수</th>
 							<th>타율</th>
+							<th>장타율</th>
+							<th>출루율</th>
 							<th>안타</th>
 							<th>2루타</th>
 							<th>3루타</th>
@@ -95,28 +104,11 @@ export default function PlayerRecent({ player_number }) {
 							<th>삼진</th>
 							<th>4구</th>
 							<th>사구</th>
-							<th>장타율</th>
-							<th>출루율</th>
 							<th>OPS</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
-							<td>4</td>
-							<td>5</td>
-							<td>6</td>
-							<td>7</td>
-							<td>8</td>
-							<td>9</td>
-							<td>0</td>
-							<td>-</td>
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
-						</tr>
+						<Total data={data} />
 					</tbody>
 				</table>
 			</div>

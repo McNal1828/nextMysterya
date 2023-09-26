@@ -4,6 +4,7 @@ import styles from './page.module.css';
 
 function calc(data, recent) {
 	const data_recent = data.filter((obj) => obj.recent == recent);
+	console.log(data_recent);
 	const AB6 = ['HBP', 'BB', 'SF', 'SAC', 'I', 'Ob'];
 	const H4 = ['H', '2B', '3B', 'HR'];
 	const H3 = ['2B', '3B', 'HR'];
@@ -20,6 +21,7 @@ function calc(data, recent) {
 function Table({ data, recent }) {
 	if (data.filter((obj) => obj.recent == recent).length == 0) return <></>;
 	const [PA, AB, H, LH, BB, K, score] = calc(data, recent);
+	console.log(PA, AB, H, LH, BB, K, score);
 	return (
 		<tr>
 			<td>{score}</td>
