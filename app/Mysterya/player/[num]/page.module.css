@@ -1,15 +1,15 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	width: 92vw;
-	min-height: calc(100vh - 250px);
+	width: 80vw;
 	background-color: var(--body-color);
 	color: var(--text-color);
-	padding: 3% 4% 0% 4%;
+	padding: 6% 8% 0% 8%;
+	flex-grow: 1;
 }
 .title {
 	font-size: 1.6em;
-	font-weight: 600;
+	font-weight: 400;
 }
 .main hr {
 	margin: 10px 0 10px 0;

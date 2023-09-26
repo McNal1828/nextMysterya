@@ -12,7 +12,6 @@ export default function Card({ support, name, number }) {
 		>
 			<Image alt='선수이미지' src={`/image/mysterya/profile/${number}.jpg`} width={200} height={200} className={styles.img} />
 			<div className={styles.info}>
-				<Image alt='응원팀' src={`/image/mysterya/support/${support}.png`} width={80} height={80} />
 				<div className={styles.name}>
 					<p>{name}</p>
 					<p>No.{number}</p>

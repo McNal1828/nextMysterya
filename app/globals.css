@@ -133,6 +133,8 @@ a {
 	--header-color: #363636;
 	--body-color: #222222;
 	--text-color: #d6d6d6;
+
+	--header-height: 60px;
 }
 
 body {

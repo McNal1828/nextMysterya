@@ -3,13 +3,14 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	color: var(--text-color);
-	padding-top: 20px;
 	width: 100%;
+	/* padding-top: 20px; */
 	padding-bottom: 20px;
 }
 .title {
 	font-size: clamp(0.5rem, 5vw, 1.5rem);
 	font-weight: 600;
+	padding-top: 20px;
 }
 .table {
 	width: 100%;

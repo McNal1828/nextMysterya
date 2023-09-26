@@ -8,6 +8,9 @@ export async function POST(req, { params }) {
 	const form = await req.formData();
 	const referer = headers().get('referer');
 	const res = NextResponse.redirect(referer);
-	res.cookies.set('mnum', form.get('mnum'));
+	const url = encodeURI(`http://localhost:3000/api/mysterya/player/profile/${form.get('mnum')}`);
+	const resapi = await fetch(url);
+	const data = await resapi.json();
+	if (data.data.length != 0) res.cookies.set('mnum', form.get('mnum'));
 	return res;
 }

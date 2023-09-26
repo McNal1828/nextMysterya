@@ -9,7 +9,7 @@ export default async function connect(sql, values = []) {
 		database: process.env.DB_DB,
 		connectionLimit: 5000,
 		multipleStatements: false,
-		charset: 'utf8',
+		charset: 'utf8mb4',
 	});
 	conn.connect();
 	const [data, fields] = await conn.execute(sql, values);
