@@ -1,16 +1,19 @@
 import { headers } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
-/**
- *
- * @param {NextRequest} req
- */
+
 export async function POST(req, { params }) {
 	const form = await req.formData();
-	const referer = headers().get('referer');
-	const res = NextResponse.redirect(referer);
-	const url = encodeURI(`http://localhost:3000/api/mysterya/player/profile/${form.get('mnum')}`);
+	// const referer = headers().get('referer');
+	const url = process.env.BASE_URL + encodeURI(`/api/mysterya/player/profile/${form.get('mnum')}`);
 	const resapi = await fetch(url);
 	const data = await resapi.json();
-	if (data.data.length != 0) res.cookies.set('mnum', form.get('mnum'));
-	return res;
+	if (data.data.length != 0) {
+		console.log(data.data.length);
+		const response = NextResponse.json({ message: '완료' }, { status: 201 });
+		response.cookies.set('mnum', form.get('mnum'));
+		return response;
+	} else {
+		const response = NextResponse.json({ message: '없는번호' }, { status: 202 });
+		return response;
+	}
 }

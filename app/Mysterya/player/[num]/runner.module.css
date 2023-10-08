@@ -1,0 +1,64 @@
+.main {
+	display: flex;
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-evenly;
+}
+.ground {
+	min-width: 500px;
+	height: 427px;
+	position: relative;
+	margin: 35px 35px;
+}
+.groundbase {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	background-color: yellow;
+	border: 2px solid rgba(255, 255, 0, 0.5);
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.base {
+	flex-grow: 1;
+	margin-top: 35px;
+	margin-left: 35px;
+	margin-right: 35px;
+	display: flex;
+	justify-content: center;
+	height: fit-content;
+}
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 7px double rgba(171, 171, 171, 0.3);
+
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 10px;
+}
+.table thead {
+	font-weight: 500;
+	background-color: var(--body-color);
+}
+.table thead tr th {
+	border-bottom: 3px solid #999999;
+}
+.table tbody {
+	background-color: #444444;
+}
+.table tr td,
+.table tr th {
+	padding: 7px 5px;
+	text-align: center;
+	font-size: clamp(0.1rem, 2vw, 1rem);
+}
+.table tbody tr th {
+	background-color: #323232;
+	border-bottom: 2px solid #999999;
+	border-top: 1px solid #999999;
+}
+.table tr {
+	margin-top: 10px;
+}

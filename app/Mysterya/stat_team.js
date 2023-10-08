@@ -4,7 +4,6 @@ import styles from './page.module.css';
 
 function calc(data, recent) {
 	const data_recent = data.filter((obj) => obj.recent == recent);
-	console.log(data_recent);
 	const AB6 = ['HBP', 'BB', 'SF', 'SAC', 'I', 'Ob'];
 	const H4 = ['H', '2B', '3B', 'HR'];
 	const H3 = ['2B', '3B', 'HR'];
@@ -21,22 +20,21 @@ function calc(data, recent) {
 function Table({ data, recent }) {
 	if (data.filter((obj) => obj.recent == recent).length == 0) return <></>;
 	const [PA, AB, H, LH, BB, K, score] = calc(data, recent);
-	console.log(PA, AB, H, LH, BB, K, score);
 	return (
 		<tr>
 			<td>{score}</td>
-			<td>{AB}</td>
+			<td className={styles.w900}>{AB}</td>
 			<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>
-			<td>{((H + BB) / (AB ? AB : 1)).toFixed(3)}</td>
+			<td className={styles.w900}>{((H + BB) / (AB ? AB : 1)).toFixed(3)}</td>
 			<td>{H}</td>
-			<td>{BB}</td>
+			<td className={styles.w900}>{BB}</td>
 			<td>{K}</td>
 		</tr>
 	);
 }
 
 export default function Stat_Team() {
-	const fetcher = (...args) => fetch(...args).then((res) => res.json());
+	const fetcher = (...args) => fetch(...args, { cache: 'no-store' }).then((res) => res.json());
 	const { data, error, isLoading } = useSWR('/api/mysterya/player/status', fetcher);
 
 	if (error)
@@ -45,22 +43,22 @@ export default function Stat_Team() {
 				<thead>
 					<tr>
 						<th>최근 3경기</th>
-						<th>타수</th>
+						<th className={styles.w900}>타수</th>
 						<th>팀타율</th>
-						<td>팀출루율</td>
+						<td className={styles.w900}>팀출루율</td>
 						<th>안타</th>
-						<th>사구</th>
+						<th className={styles.w900}>사사구</th>
 						<th>삼진</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>로딩중 입니다......</td>
+						<td className={styles.w900}>...</td>
 						<td>...</td>
+						<td className={styles.w900}>...</td>
 						<td>...</td>
-						<td>...</td>
-						<td>...</td>
-						<td>...</td>
+						<td className={styles.w900}>...</td>
 						<td>...</td>
 					</tr>
 				</tbody>
@@ -73,22 +71,22 @@ export default function Stat_Team() {
 				<thead>
 					<tr>
 						<th>최근 3경기</th>
-						<th>타수</th>
+						<th className={styles.w900}>타수</th>
 						<th>팀타율</th>
-						<td>팀출루율</td>
+						<td className={styles.w900}>팀출루율</td>
 						<th>안타</th>
-						<th>사구</th>
+						<th className={styles.w900}>사사구</th>
 						<th>삼진</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>로딩중 입니다......</td>
+						<td className={styles.w900}>...</td>
 						<td>...</td>
+						<td className={styles.w900}>...</td>
 						<td>...</td>
-						<td>...</td>
-						<td>...</td>
-						<td>...</td>
+						<td className={styles.w900}>...</td>
 						<td>...</td>
 					</tr>
 				</tbody>
@@ -99,11 +97,11 @@ export default function Stat_Team() {
 			<thead>
 				<tr>
 					<th>최근 경기</th>
-					<th>타수</th>
+					<th className={styles.w900}>타수</th>
 					<th>팀타율</th>
-					<td>팀출루율</td>
+					<td className={styles.w900}>팀출루율</td>
 					<th>안타</th>
-					<th>사구</th>
+					<th className={styles.w900}>사구</th>
 					<th>삼진</th>
 				</tr>
 			</thead>

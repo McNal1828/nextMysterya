@@ -90,3 +90,6 @@
 .navBtn:hover {
 	background-color: rgba(164, 164, 164, 0.4);
 }
+.scroll {
+	overflow-x: scroll;
+}

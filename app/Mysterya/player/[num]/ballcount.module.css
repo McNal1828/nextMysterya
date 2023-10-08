@@ -1,0 +1,115 @@
+.main {
+	display: flex;
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-evenly;
+}
+.image {
+	min-width: 500px;
+	height: 427px;
+	position: relative;
+	margin: 35px 35px;
+}
+.image p {
+	font-size: 4em;
+	font-weight: 600;
+	margin: 30px 50px;
+}
+.image p span {
+	display: inline-block;
+	margin-right: 40px;
+	min-width: 50px;
+	min-height: 50px;
+	border-radius: 50%;
+}
+.image p span:first-child {
+	background-color: transparent !important;
+	box-shadow: none !important;
+	border-radius: 0;
+}
+.image p:nth-child(1) span {
+	background-color: #00ff01;
+	box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+		rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+		rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.image p:nth-child(2) span {
+	background-color: #fbf002;
+	box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+		rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+		rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.image p:nth-child(3) span {
+	background-color: #fa0001;
+	box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+		rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+		rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.base {
+	width: 100%;
+	border-collapse: collapse;
+	border: 7px double rgba(171, 171, 171, 0.3);
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 10px;
+	margin-top: 50px;
+	margin-left: 30px;
+	margin-right: 50px;
+	height: fit-content;
+}
+.base thead {
+	font-weight: 500;
+	background-color: var(--body-color);
+}
+.base thead tr th {
+	border-bottom: 3px solid #999999;
+}
+.base tbody {
+	background-color: #444444;
+}
+.base tr td,
+.base tr th {
+	padding: 7px 5px;
+	text-align: center;
+	font-size: clamp(0.1rem, 2vw, 1rem);
+}
+.table {
+	width: 100%;
+	border-bottom: 2px solid #999999;
+}
+.table tbody tr th {
+	background-color: #323232;
+	border-bottom: 2px solid #999999;
+	border-top: 1px solid #999999;
+}
+.table tr {
+	margin-top: 10px;
+}
+.table p {
+	font-size: 1.2em;
+	margin: 10px 5px;
+}
+.base > nav > ul {
+	display: flex;
+	margin-bottom: 3px;
+}
+.base > nav > ul > li {
+	border-radius: 5px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	height: 24px;
+	flex-grow: 1;
+	padding: 10px 15px;
+	background-color: var(--body-color);
+
+	cursor: pointer;
+
+	position: relative;
+
+	display: flex;
+	border: 3px solid rgba(171, 171, 171, 0.3);
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	user-select: none;
+}

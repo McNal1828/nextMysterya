@@ -52,6 +52,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-direction: row;
 }
 
 .mine .my_info {
@@ -116,9 +117,53 @@
 .table tr:last-child td:last-child {
 	border-bottom-right-radius: 1em;
 }
-
+.logo {
+	position: relative;
+	width: 350px;
+	height: 300px;
+}
 @media (max-width: 1270px) {
 	.wrapper {
 		flex-direction: column;
+	}
+}
+@media (max-width: 800px) {
+	.mine {
+		flex-direction: column-reverse;
+		height: fit-content;
+		margin-bottom: 30px;
+	}
+	.stat {
+		height: fit-content;
+		margin-top: 20px;
+		width: fit-content;
+	}
+	.w900 {
+		display: none;
+	}
+	.team {
+		align-items: center;
+		justify-content: center;
+	}
+	.my_info {
+		margin-bottom: 20px;
+	}
+	.my_info img {
+		margin-bottom: 20px;
+	}
+	.title {
+		width: 200px;
+	}
+	.form input[type='text'] {
+		width: 200px;
+		font-size: 14px;
+	}
+	.table {
+		width: 80vw;
+	}
+}
+@media (max-width: 500px) {
+	.w500 {
+		display: none;
 	}
 }

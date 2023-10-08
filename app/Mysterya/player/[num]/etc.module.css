@@ -1,0 +1,16 @@
+.main {
+	display: flex;
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-evenly;
+}
+.list {
+	margin-top: 35px;
+	margin-left: 40px;
+	margin-right: 40px;
+	flex-grow: 1;
+	overflow-y: scroll;
+}
+.list::-webkit-scrollbar {
+	display: none;
+}

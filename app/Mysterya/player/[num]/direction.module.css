@@ -1,0 +1,90 @@
+.main {
+	display: flex;
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-evenly;
+}
+.ground {
+	min-width: 500px;
+	height: 427px;
+	position: relative;
+	margin: 35px 35px;
+}
+.groundcircle {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	position: absolute;
+	/* transform: translate(-50%, -50%); */
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.count {
+	flex-grow: 1;
+	margin-top: 35px;
+	max-width: 500px;
+}
+.count .buttons {
+	display: flex;
+	justify-content: center;
+}
+.count .buttons button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 6px 14px;
+	margin: 0px 5px;
+	border-radius: 6px;
+	border: none;
+	width: 100%;
+	max-width: 210px;
+	background: transparent;
+	box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+	color: var(--text-color);
+	font-family: inherit;
+	font-size: 1.1em;
+	font-weight: 600;
+	letter-spacing: 2px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.count .buttons button:focus {
+	box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px #999999;
+	outline: 0;
+}
+.count .rank {
+	overflow-y: scroll;
+	overflow-x: visible;
+	height: 380px;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+	padding: 0px 35px;
+}
+.count .rank::-webkit-scrollbar {
+	display: none;
+}
+.count .rank li {
+	display: flex;
+	width: 100%;
+	min-height: 50px;
+	align-items: center;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+	box-shadow: rgba(210, 210, 210, 0.8) 0px 0px 0px 2px, rgba(136, 142, 157, 0.6) 0px 4px 6px -1px, rgba(255, 255, 255, 0.45) 0px 1px 0px inset;
+	margin-bottom: 5px;
+}
+.count .rank li:first-child {
+	margin-top: 10px;
+}
+.count .rank li .direction {
+	width: 100px;
+	margin-left: 40px;
+}
+.count .rank li .directioncount {
+	flex-grow: 1;
+	width: 100px;
+	text-align: center;
+}

@@ -1,0 +1,126 @@
+.main {
+	display: flex;
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-evenly;
+}
+.count {
+	flex-grow: 1;
+	margin-top: 35px;
+	max-width: 500px;
+}
+.count .buttons {
+	display: flex;
+	justify-content: center;
+}
+.count .buttons button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 6px 14px;
+	margin: 0px 5px;
+	border-radius: 6px;
+	border: none;
+	width: 100%;
+	max-width: 210px;
+	background: transparent;
+	box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+	color: var(--text-color);
+	font-family: inherit;
+	font-size: 1.1em;
+	font-weight: 600;
+	letter-spacing: 2px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.count .buttons button:focus {
+	box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px #999999;
+	outline: 0;
+}
+.count .rank {
+	overflow-y: scroll;
+	overflow-x: visible;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 35px;
+}
+.count .rank::-webkit-scrollbar {
+	display: none;
+}
+.count .rank li {
+	display: flex;
+	width: 90%;
+	height: 50px;
+	align-items: center;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+	box-shadow: rgba(210, 210, 210, 0.8) 0px 0px 0px 2px, rgba(136, 142, 157, 0.6) 0px 4px 6px -1px, rgba(255, 255, 255, 0.45) 0px 1px 0px inset;
+	margin-bottom: 7px;
+	padding: 3px 20px;
+}
+.count .rank li:first-child {
+	margin-top: 10px;
+}
+.count .rank li span:nth-child(1) {
+	font-size: 1.5em;
+}
+.count .rank li span:nth-child(2) {
+	flex-grow: 1;
+	font-size: 1.2em;
+	padding-left: 10px;
+}
+.count .rank li span:nth-child(3) {
+	font-size: 1.1em;
+}
+
+.table {
+	min-width: 600px;
+	border-collapse: collapse;
+	border: 7px double rgba(171, 171, 171, 0.3);
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 10px;
+	height: fit-content;
+}
+.table thead {
+	font-weight: 500;
+	background-color: var(--body-color);
+}
+.table thead tr th {
+	border-bottom: 3px solid #999999;
+}
+.table tbody {
+	background-color: #444444;
+}
+.table tr td,
+.table tr th {
+	padding: 7px 5px;
+	text-align: center;
+	font-size: clamp(0.1rem, 2vw, 1rem);
+}
+.table tbody tr th {
+	background-color: #323232;
+	border-bottom: 2px solid #999999;
+	border-top: 1px solid #999999;
+}
+.table tr {
+	margin-top: 10px;
+}
+.table p {
+	font-size: 1.2em;
+	margin: 10px 5px;
+}
+.recent {
+	margin-top: 35px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+.recent p {
+	font-size: 2em;
+	margin-bottom: 20px;
+	font-weight: 500;
+}
