@@ -124,3 +124,8 @@
 	margin-bottom: 20px;
 	font-weight: 500;
 }
+@media (max-width: 1400px) {
+	.w1400 {
+		display: none;
+	}
+}

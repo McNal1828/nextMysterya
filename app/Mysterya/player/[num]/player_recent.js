@@ -22,23 +22,25 @@ export default function PlayerRecent({ player_number }) {
 							<thead>
 								<tr>
 									<th>경기</th>
+									<th>이닝</th>
 									<th>결과</th>
-									<th>공 개수</th>
+									<th className={styles.w900n}>공 개수</th>
 									<th>S</th>
 									<th>B</th>
 									<th>O</th>
-									<th>주자</th>
+									<th className={styles.w600n}>주자</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>데이터를 로딩하고있습니다 ...</td>
 									<td>...</td>
 									<td>...</td>
 									<td>...</td>
+									<td className={styles.w900n}>...</td>
 									<td>...</td>
 									<td>...</td>
 									<td>...</td>
+									<td className={styles.w600n}>...</td>
 								</tr>
 							</tbody>
 						</table>
@@ -53,28 +55,30 @@ export default function PlayerRecent({ player_number }) {
 								<tr>
 									<th>경기</th>
 									<th>타석</th>
-									<th>타수</th>
+									<th className={styles.w600n}>타수</th>
 									<th>타율</th>
-									<th>출루율</th>
+									<th className={styles.w900n}>출루율</th>
 									<th>안타</th>
-									<th>장타</th>
-									<th>삼진</th>
-									<th>4구</th>
-									<th>사구</th>
+									<th className={styles.w600n}>장타</th>
+									<th className={styles.w600n}>삼진</th>
+									<th className={styles.w900n}>4구</th>
+									<th className={styles.w900n}>사구</th>
+									<th className={styles.w900s}>사사구</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>로딩중...</td>
 									<td>...</td>
 									<td>...</td>
+									<td className={styles.w600n}>...</td>
 									<td>...</td>
+									<td className={styles.w900n}>...</td>
 									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
+									<td className={styles.w600n}>...</td>
+									<td className={styles.w600n}>...</td>
+									<td className={styles.w900n}>...</td>
+									<td className={styles.w900n}>...</td>
+									<td className={styles.w900s}>...</td>
 								</tr>
 							</tbody>
 						</table>
@@ -89,39 +93,95 @@ export default function PlayerRecent({ player_number }) {
 								<tr>
 									<th>경기수</th>
 									<th>타석</th>
-									<th>타수</th>
+									<th className={styles.w600n}>타수</th>
 									<th>타율</th>
-									<th>장타율</th>
-									<th>출루율</th>
+									<th className={styles.w900n}>장타율</th>
+									<th className={styles.w600n}>출루율</th>
 									<th>안타</th>
-									<th>2루타</th>
-									<th>3루타</th>
-									<th>홈런</th>
-									<th>삼진</th>
-									<th>4구</th>
-									<th>사구</th>
-									<th>OPS</th>
+									<th className={styles.w1000n}>2루타</th>
+									<th className={styles.w1000n}>3루타</th>
+									<th className={styles.w1000n}>홈런</th>
+									<th className={`${styles.w1000s} ${styles.w600n}`}>장타</th>
+									<th className={styles.w600n}>삼진</th>
+									<th className={styles.w1200n}>4구</th>
+									<th className={styles.w1200n}>사구</th>
+									<th className={styles.w1200s}>사사구</th>
+									<th className={styles.w900n}>OPS</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>로딩중...</td>
 									<td>...</td>
 									<td>...</td>
+									<td className={styles.w600n}>...</td>
 									<td>...</td>
+									<td className={styles.w900n}>...</td>
+									<td className={styles.w600n}>...</td>
 									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
+									<td className={styles.w1000n}>...</td>
+									<td className={styles.w1000n}>...</td>
+									<td className={styles.w1000n}>...</td>
+									<td className={`${styles.w1000s} ${styles.w600n}`}>...</td>
+									<td className={styles.w600n}>...</td>
+									<td className={styles.w1200n}>...</td>
+									<td className={styles.w1200n}>...</td>
+									<td className={styles.w1200s}>...</td>
+									<td className={styles.w900n}>...</td>
 								</tr>
 							</tbody>
 						</table>
+					</div>
+					<div>
+						<div className={styles.title}>
+							<p>리그 / 연도별</p>
+							<hr />
+						</div>
+						<div className={styles.scroll}>
+							<table className={styles.table}>
+								<thead>
+									<tr>
+										<th>구분</th>
+										<th>경기수</th>
+										<th>타석</th>
+										<th className={styles.w600n}>타수</th>
+										<th>타율</th>
+										<th className={styles.w900n}>장타율</th>
+										<th className={styles.w600n}>출루율</th>
+										<th>안타</th>
+										<th className={styles.w1000n}>2루타</th>
+										<th className={styles.w1000n}>3루타</th>
+										<th className={styles.w1000n}>홈런</th>
+										<th className={`${styles.w1000s} ${styles.w600n}`}>장타</th>
+										<th className={styles.w600n}>삼진</th>
+										<th className={styles.w1200n}>4구</th>
+										<th className={styles.w1200n}>사구</th>
+										<th className={styles.w1200s}>사사구</th>
+										<th className={styles.w900n}>OPS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>...</td>
+										<td>...</td>
+										<td>...</td>
+										<td className={styles.w600n}>...</td>
+										<td>...</td>
+										<td className={styles.w900n}>...</td>
+										<td className={styles.w600n}>...</td>
+										<td>...</td>
+										<td className={styles.w1000n}>...</td>
+										<td className={styles.w1000n}>...</td>
+										<td className={styles.w1000n}>...</td>
+										<td className={`${styles.w1000s} ${styles.w600n}`}>...</td>
+										<td className={styles.w600n}>...</td>
+										<td className={styles.w1200n}>...</td>
+										<td className={styles.w1200n}>...</td>
+										<td className={styles.w1200s}>...</td>
+										<td className={styles.w900n}>...</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</>
@@ -171,26 +231,26 @@ export default function PlayerRecent({ player_number }) {
 					<thead>
 						<tr>
 							<th>경기</th>
+							<th>이닝</th>
 							<th>결과</th>
-							<th>공 개수</th>
+							<th className={styles.w900n}>공 개수</th>
 							<th>S</th>
 							<th>B</th>
 							<th>O</th>
-							<th>주자</th>
+							<th className={styles.w600n}>주자</th>
 						</tr>
 					</thead>
 					<tbody>
 						{personal_recent_1_data.map((data, index) => (
 							<tr key={index}>
-								<td>
-									{data.game_score} &nbsp;&nbsp;&nbsp; {data.inning}회
-								</td>
+								<td>{data.game_score}</td>
+								<td>{data.inning}회</td>
 								<td>{ko[data.hit_result ? data.hit_result : data.result]}</td>
-								<td>{data.final}</td>
+								<td className={styles.w900n}>{data.final}</td>
 								<td>{data.strike}</td>
 								<td>{data.ball}</td>
 								<td>{data.out_count}</td>
-								<td>
+								<td className={styles.w600n}>
 									{data.base1 ? '1,' : ''}
 									{data.base2 ? '2,' : ''}
 									{data.base3 ? '3' : ''}
@@ -209,14 +269,15 @@ export default function PlayerRecent({ player_number }) {
 						<tr>
 							<th>경기</th>
 							<th>타석</th>
-							<th>타수</th>
+							<th className={styles.w600n}>타수</th>
 							<th>타율</th>
-							<th>출루율</th>
+							<th className={styles.w900n}>출루율</th>
 							<th>안타</th>
-							<th>장타</th>
-							<th>삼진</th>
-							<th>4구</th>
-							<th>사구</th>
+							<th className={styles.w600n}>장타</th>
+							<th className={styles.w600n}>삼진</th>
+							<th className={styles.w900n}>4구</th>
+							<th className={styles.w900n}>사구</th>
+							<th className={styles.w900s}>사사구</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -234,18 +295,20 @@ export default function PlayerRecent({ player_number }) {
 						<tr>
 							<th>경기수</th>
 							<th>타석</th>
-							<th>타수</th>
+							<th className={styles.w600n}>타수</th>
 							<th>타율</th>
-							<th>장타율</th>
-							<th>출루율</th>
+							<th className={styles.w900n}>장타율</th>
+							<th className={styles.w600n}>출루율</th>
 							<th>안타</th>
-							<th>2루타</th>
-							<th>3루타</th>
-							<th>홈런</th>
-							<th>삼진</th>
-							<th>4구</th>
-							<th>사구</th>
-							<th>OPS</th>
+							<th className={styles.w1000n}>2루타</th>
+							<th className={styles.w1000n}>3루타</th>
+							<th className={styles.w1000n}>홈런</th>
+							<th className={`${styles.w1000s} ${styles.w600n}`}>장타</th>
+							<th className={styles.w600n}>삼진</th>
+							<th className={styles.w1200n}>4구</th>
+							<th className={styles.w1200n}>사구</th>
+							<th className={styles.w1200s}>사사구</th>
+							<th className={styles.w900n}>OPS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -263,18 +326,20 @@ export default function PlayerRecent({ player_number }) {
 								<th>구분</th>
 								<th>경기수</th>
 								<th>타석</th>
-								<th>타수</th>
+								<th className={styles.w600n}>타수</th>
 								<th>타율</th>
-								<th>장타율</th>
-								<th>출루율</th>
+								<th className={styles.w900n}>장타율</th>
+								<th className={styles.w600n}>출루율</th>
 								<th>안타</th>
-								<th>2루타</th>
-								<th>3루타</th>
-								<th>홈런</th>
-								<th>삼진</th>
-								<th>4구</th>
-								<th>사구</th>
-								<th>OPS</th>
+								<th className={styles.w1000n}>2루타</th>
+								<th className={styles.w1000n}>3루타</th>
+								<th className={styles.w1000n}>홈런</th>
+								<th className={`${styles.w1000s} ${styles.w600n}`}>장타</th>
+								<th className={styles.w600n}>삼진</th>
+								<th className={styles.w1200n}>4구</th>
+								<th className={styles.w1200n}>사구</th>
+								<th className={styles.w1200s}>사사구</th>
+								<th className={styles.w900n}>OPS</th>
 							</tr>
 						</thead>
 						<tbody>

@@ -28,7 +28,8 @@
 .table tr th {
 	padding: 7px 5px;
 	text-align: center;
-	font-size: clamp(0.1rem, 2vw, 1rem);
+	font-size: clamp(0.7rem, 2vw, 1rem);
+	min-width: 35px;
 }
 .tabItems {
 	position: relative;
@@ -92,4 +93,45 @@
 }
 .scroll {
 	overflow-x: scroll;
+}
+
+@media (max-width: 1200px) {
+	.w1200n {
+		display: none;
+	}
+}
+@media (min-width: 1200px) {
+	.w1200s {
+		display: none;
+	}
+}
+@media (max-width: 1050px) {
+	.w1000n {
+		display: none;
+	}
+}
+@media (min-width: 1050px) {
+	.w1000s {
+		display: none;
+	}
+}
+@media (max-width: 900px) {
+	.w900n {
+		display: none;
+	}
+}
+@media (min-width: 900px) {
+	.w900s {
+		display: none;
+	}
+}
+@media (max-width: 600px) {
+	.w600n {
+		display: none;
+	}
+}
+@media (min-width: 600px) {
+	.w600s {
+		display: none;
+	}
 }

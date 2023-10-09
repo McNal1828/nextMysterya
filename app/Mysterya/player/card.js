@@ -30,7 +30,16 @@ export default function Card({ support, name, number }) {
 			whileInView='whileInView'
 			viewport={{ once: true }}
 		>
-			<Image alt='선수이미지' src={`/image/mysterya/profile/${number}.jpg`} width={200} height={200} className={styles.img} />
+			<div className={styles.img}>
+				<Image
+					alt='선수이미지'
+					src={`/image/mysterya/profile/${number}.jpg`}
+					fill
+					style={{
+						objectFit: 'contain',
+					}}
+				/>
+			</div>
 			<div className={styles.info}>
 				<div className={styles.name}>
 					<p>{name}</p>

@@ -42,7 +42,7 @@ export default function Runner({ player_number }) {
 			// exit={{ x: -100, opacity: 0 }}
 			transition={{ duration: 0.2 }}
 		>
-			<div className={styles.ground}>
+			<div className={`${styles.ground} ${styles.w1400}`}>
 				<Image src={'/image/mysterya/field.png'} alt='야구장' fill={true} quality={100} />
 				{/* {counts.map((val, index) => ( */}
 				<Groundbase baseGraphic={baseGraphic} isb={isb} />
@@ -54,16 +54,17 @@ export default function Runner({ player_number }) {
 						<tr>
 							<th>베이스</th>
 							<th>타석</th>
-							<th>타수</th>
+							<th className={styles.w900n}>타수</th>
 							<th>타율</th>
-							<th>장타율</th>
-							<th>출루율</th>
+							<th className={styles.w900n}>장타율</th>
+							<th className={styles.w600n}>출루율</th>
 							<th>안타</th>
-							<th>장타</th>
-							<th>삼진</th>
-							<th>4구</th>
-							<th>사구</th>
-							<th>OPS</th>
+							<th className={`${styles.w600n}`}>장타</th>
+							<th className={styles.w600n}>삼진</th>
+							<th className={styles.w1200n}>4구</th>
+							<th className={styles.w1200n}>사구</th>
+							<th className={styles.w1200s}>사사구</th>
+							<th className={styles.w900n}>OPS</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -179,16 +180,17 @@ export function BaseHead({ data, base, gp, setbaseGraphic, setisb }) {
 		>
 			<th>{base}</th>
 			<th>{PA}</th>
-			<th>{AB}</th>
+			<th className={styles.w900n}>{AB}</th>
 			<th>{(H / (AB ? AB : 1)).toFixed(3)}</th>
-			<th>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</th>
-			<th>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</th>
+			<th className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</th>
+			<th className={styles.w600n}>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</th>
 			<th>{H}</th>
-			<th>{LH}</th>
-			<th>{K}</th>
-			<th>{BB}</th>
-			<th>{HBP}</th>
-			<th>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</th>
+			<th className={`${styles.w600n}`}>{LH}</th>
+			<th className={styles.w600n}>{K}</th>
+			<th className={styles.w1200n}>{BB}</th>
+			<th className={styles.w1200n}>{HBP}</th>
+			<th className={styles.w1200s}>{HBP + BB}</th>
+			<th className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</th>
 		</tr>
 	);
 }
@@ -211,16 +213,17 @@ export function Base({ data, base, gp, setbaseGraphic }) {
 		>
 			<td>{base}</td>
 			<td>{PA}</td>
-			<td>{AB}</td>
+			<td className={styles.w900n}>{AB}</td>
 			<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>
-			<td>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</td>
-			<td>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+			<td className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</td>
+			<td className={styles.w600n}>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 			<td>{H}</td>
-			<td>{LH}</td>
-			<td>{K}</td>
-			<td>{BB}</td>
-			<td>{HBP}</td>
-			<td>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+			<td className={`${styles.w600n}`}>{LH}</td>
+			<td className={styles.w600n}>{K}</td>
+			<td className={styles.w1200n}>{BB}</td>
+			<td className={styles.w1200n}>{HBP}</td>
+			<td className={styles.w1200s}>{HBP + BB}</td>
+			<td className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 		</tr>
 	);
 }

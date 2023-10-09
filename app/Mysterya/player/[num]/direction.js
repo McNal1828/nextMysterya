@@ -54,7 +54,7 @@ export default function Direction({ player_number }) {
 			// exit={{ x: -100, opacity: 0 }}
 			transition={{ duration: 0.2 }}
 		>
-			<div className={styles.ground}>
+			<div className={`${styles.ground} ${styles.w1400}`}>
 				<Image src={'/image/mysterya/field.png'} alt='야구장' fill={true} quality={100} />
 				{counts.map((val, index) => (
 					<Groundcircle data={val} key={index} total_counts={total_counts} />

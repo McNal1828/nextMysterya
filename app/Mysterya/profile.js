@@ -6,7 +6,9 @@ export default async function Profile({ mnum }) {
 		return (
 			<div className={styles.my_info}>
 				<Image alt='테스트용이미지' src='/image/mysterya/profile/default.jpg' style={{ borderRadius: '15%' }} width={160} height={160} />
-				<p className={styles.my_number}>번호를 등록해주세요</p>
+				<p className={styles.my_number} style={{ fontSize: '1em' }}>
+					번호를 등록해주세요
+				</p>
 			</div>
 		);
 	}

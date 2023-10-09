@@ -113,3 +113,29 @@
 	position: relative;
 	user-select: none;
 }
+@media (max-width: 1400px) {
+	.w1400 {
+		display: none;
+	}
+}
+@media (max-width: 600px) {
+	.base {
+		margin-top: 35px;
+		margin-left: 10px;
+		margin-right: 10px;
+		height: fit-content;
+	}
+	.base > nav > ul > li {
+		padding: 5px 10px;
+		font-size: 0.8em;
+	}
+}
+@media (max-width: 800px) {
+	.w800n {
+		display: none;
+	}
+	.base tr th,
+	.base tr td {
+		font-size: 0.8em;
+	}
+}

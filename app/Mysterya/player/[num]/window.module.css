@@ -49,3 +49,16 @@
 	height: 3px;
 	background: #999999;
 }
+@media (max-width: 600px) {
+	.window {
+		height: fit-content;
+	}
+	.window > nav > ul > li {
+		min-width: 60px;
+		padding: 5px 10px;
+	}
+	.main {
+		height: fit-content !important;
+		margin-bottom: 35px;
+	}
+}

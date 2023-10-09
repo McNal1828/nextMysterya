@@ -42,7 +42,7 @@ export default function Ballcount({ player_number }) {
 			// exit={{ x: -100, opacity: 0 }}
 			transition={{ duration: 0.2 }}
 		>
-			<div className={styles.image}>
+			<div className={`${styles.image} ${styles.w1400}`}>
 				<p>
 					<span>B</span>
 					{[...Array(selected_ball)].map((n, index) => (
@@ -140,7 +140,7 @@ function Table({ data, setselected_strike, setselected_ball }) {
 						<th>볼카운트</th>
 						<th>타석</th>
 						<th>타율</th>
-						<th>출루율</th>
+						<th className={styles.w800n}>출루율</th>
 						<th>아웃</th>
 						<th>안타</th>
 						<th>사사구</th>
@@ -196,7 +196,7 @@ function Calc({ data, setselected_strike, setselected_ball }) {
 			</td>
 			<td>{PA}</td>
 			<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>
-			<td>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+			<td className={styles.w800n}>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 			<td>{out}번</td>
 			<td>{H}번</td>
 			<td>{BB2}번</td>

@@ -1,3 +1,4 @@
+import styles from './content.module.css';
 function calc(data) {
 	const AB6 = ['HBP', 'BB', 'SF', 'SAC', 'I', 'Ob'];
 	const H4 = ['H', '2B', '3B', 'HR'];
@@ -35,18 +36,20 @@ export function League({ data, count }) {
 						<td>{league}</td>
 						<td>{count.filter((obj) => obj.league_index == lindex).length}</td>
 						<td>{PA}</td>
-						<td>{AB}</td>
+						<td className={styles.w600n}>{AB}</td>
 						<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>
-						<td>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</td>
-						<td>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+						<td className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</td>
+						<td className={styles.w600n}>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 						<td>{H}</td>
-						<td>{_2B}</td>
-						<td>{_3B}</td>
-						<td>{_4B}</td>
-						<td>{K}</td>
-						<td>{BB}</td>
-						<td>{HBP}</td>
-						<td>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+						<th className={styles.w1000n}>{_2B}</th>
+						<th className={styles.w1000n}>{_3B}</th>
+						<th className={styles.w1000n}>{_4B}</th>
+						<th className={`${styles.w1000s} ${styles.w600n}`}>{H + _2B + _3B + _4B}</th>
+						<td className={styles.w600n}>{K}</td>
+						<th className={styles.w1200n}>{BB}</th>
+						<th className={styles.w1200n}>{HBP}</th>
+						<th className={styles.w1200s}>{BB + HBP}</th>
+						<td className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 					</tr>
 				);
 			})}
@@ -69,18 +72,20 @@ export function Year({ data, year }) {
 						<td>{yindex}년</td>
 						<td>{year.filter((obj) => obj.year == yindex).length}</td>
 						<td>{PA}</td>
-						<td>{AB}</td>
+						<td className={styles.w600n}>{AB}</td>
 						<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>
-						<td>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</td>
-						<td>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+						<td className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</td>
+						<th className={styles.w600n}>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</th>
 						<td>{H}</td>
-						<td>{_2B}</td>
-						<td>{_3B}</td>
-						<td>{_4B}</td>
-						<td>{K}</td>
-						<td>{BB}</td>
-						<td>{HBP}</td>
-						<td>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+						<th className={styles.w1000n}>{_2B}</th>
+						<th className={styles.w1000n}>{_3B}</th>
+						<th className={styles.w1000n}>{_4B}</th>
+						<th className={`${styles.w1000s} ${styles.w600n}`}>{H + _2B + _3B + _4B}</th>
+						<td className={styles.w600n}>{K}</td>
+						<th className={styles.w1200n}>{BB}</th>
+						<th className={styles.w1200n}>{HBP}</th>
+						<th className={styles.w1200s}>{BB + HBP}</th>
+						<td className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 					</tr>
 				);
 			})}
@@ -97,18 +102,20 @@ export function Total({ data, personal_total_count }) {
 		<tr>
 			<td>{personal_total_count}</td>
 			<td>{PA}</td>
-			<td>{AB}</td>
+			<td className={styles.w600n}>{AB}</td>
 			<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>
-			<td>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</td>
-			<td>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+			<td className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1)).toFixed(3)}</td>
+			<td className={styles.w600n}>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 			<td>{H}</td>
-			<td>{_2B}</td>
-			<td>{_3B}</td>
-			<td>{_4B}</td>
-			<td>{K}</td>
-			<td>{BB}</td>
-			<td>{HBP}</td>
-			<td>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+			<th className={styles.w1000n}>{_2B}</th>
+			<th className={styles.w1000n}>{_3B}</th>
+			<th className={styles.w1000n}>{_4B}</th>
+			<th className={`${styles.w1000s} ${styles.w600n}`}>{H + _2B + _3B + _4B}</th>
+			<td className={styles.w600n}>{K}</td>
+			<th className={styles.w1200n}>{BB}</th>
+			<th className={styles.w1200n}>{HBP}</th>
+			<th className={styles.w1200s}>{BB + HBP}</th>
+			<td className={styles.w900n}>{((H + _2B * 2 + _3B * 3 + _4B * 4) / (AB ? AB : 1) + (H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 		</tr>
 	);
 }
@@ -124,14 +131,15 @@ export function Recent_5({ data, recent }) {
 		<tr>
 			<td>{score}</td>
 			<td>{PA}</td>
-			<td>{AB}</td>
+			<td className={styles.w600n}>{AB}</td>
 			<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>
-			<td>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
+			<td className={styles.w900n}>{((H + BB2) / (PA ? PA : 1)).toFixed(3)}</td>
 			<td>{H}</td>
-			<td>{LH}</td>
-			<td>{K}</td>
-			<td>{BB}</td>
-			<td>{HBP}</td>
+			<td className={styles.w600n}>{LH}</td>
+			<td className={styles.w600n}>{K}</td>
+			<td className={styles.w900n}>{BB}</td>
+			<td className={styles.w900n}>{HBP}</td>
+			<th className={styles.w900s}>{BB + HBP}</th>
 		</tr>
 	);
 }

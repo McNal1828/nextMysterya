@@ -52,7 +52,7 @@ export default function Out({ player_number }) {
 			// exit={{ x: -100, opacity: 0 }}
 			transition={{ duration: 0.2 }}
 		>
-			<div className={styles.recent}>
+			<div className={`${styles.recent} ${styles.w1400}`}>
 				<p>최근기록</p>
 				<table className={styles.table}>
 					<thead>
