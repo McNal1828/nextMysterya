@@ -131,7 +131,7 @@
 	.mine {
 		flex-direction: column-reverse;
 		height: fit-content;
-		margin-bottom: 70px;
+		margin-bottom: 20px;
 	}
 	.stat {
 		height: fit-content;
@@ -144,6 +144,9 @@
 	.team {
 		align-items: center;
 		justify-content: center;
+		height: fit-content;
+		min-width: 200px;
+		margin-bottom: 50px;
 	}
 	.my_info {
 		margin-bottom: 20px;

@@ -319,35 +319,34 @@ export default function PlayerRecent({ player_number }) {
 					<p>리그 / 연도별</p>
 					<hr />
 				</div>
-				<div className={styles.scroll}>
-					<table className={styles.table}>
-						<thead>
-							<tr>
-								<th>구분</th>
-								<th>경기수</th>
-								<th>타석</th>
-								<th className={styles.w600n}>타수</th>
-								<th>타율</th>
-								<th className={styles.w900n}>장타율</th>
-								<th className={styles.w600n}>출루율</th>
-								<th>안타</th>
-								<th className={styles.w1000n}>2루타</th>
-								<th className={styles.w1000n}>3루타</th>
-								<th className={styles.w1000n}>홈런</th>
-								<th className={`${styles.w1000s} ${styles.w600n}`}>장타</th>
-								<th className={styles.w600n}>삼진</th>
-								<th className={styles.w1200n}>4구</th>
-								<th className={styles.w1200n}>사구</th>
-								<th className={styles.w1200s}>사사구</th>
-								<th className={styles.w900n}>OPS</th>
-							</tr>
-						</thead>
-						<tbody>
-							<League data={personal_data} count={personal_count} />
-							<Year data={personal_data} year={personal_year} />
-						</tbody>
-					</table>
-				</div>
+
+				<table className={styles.table}>
+					<thead>
+						<tr>
+							<th>구분</th>
+							<th>경기수</th>
+							<th>타석</th>
+							<th className={styles.w600n}>타수</th>
+							<th>타율</th>
+							<th className={styles.w900n}>장타율</th>
+							<th className={styles.w600n}>출루율</th>
+							<th>안타</th>
+							<th className={styles.w1000n}>2루타</th>
+							<th className={styles.w1000n}>3루타</th>
+							<th className={styles.w1000n}>홈런</th>
+							<th className={`${styles.w1000s} ${styles.w600n}`}>장타</th>
+							<th className={styles.w600n}>삼진</th>
+							<th className={styles.w1200n}>4구</th>
+							<th className={styles.w1200n}>사구</th>
+							<th className={styles.w1200s}>사사구</th>
+							<th className={styles.w900n}>OPS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<League data={personal_data} count={personal_count} />
+						<Year data={personal_data} year={personal_year} />
+					</tbody>
+				</table>
 			</div>
 		</>
 	);

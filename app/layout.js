@@ -12,7 +12,9 @@ const nanum_Gothic = Nanum_Gothic_Coding({ subsets: ['latin'], weight: ['400'] }
 export default function RootLayout({ children }) {
 	return (
 		<html lang='ko'>
-			<head></head>
+			<head>
+				<link rel='manifest' href='/manifest.json' />
+			</head>
 			<body className={nanum_Gothic.className}>{children}</body>
 			{/* <body>{children}</body> */}
 		</html>

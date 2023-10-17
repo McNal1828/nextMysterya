@@ -1,0 +1,107 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	min-height: inherit;
+	flex-grow: 1;
+	background-color: var(--body-color);
+	color: var(--text-color);
+	padding: 2em 4em 3em 4em;
+}
+.title {
+	font-size: 2.7em;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+}
+.main hr {
+	width: 100%;
+	margin: 1em 0 1em 0;
+}
+.subtitle {
+	font-size: 2em;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	margin-top: 30px;
+}
+.subtitle:first-child {
+	margin-top: 10px;
+}
+.submain {
+	display: flex;
+	flex-direction: column;
+	padding: 1.5em 4em 3em 4em;
+}
+.submain ul li {
+	cursor: pointer;
+	padding: 10px 20px;
+	font-size: 1.4em;
+	font-weight: 300;
+}
+.cards {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+.detail {
+	display: flex;
+	justify-content: center;
+}
+.summary {
+	font-size: 1.2em;
+	font-weight: 500;
+	padding: 10px 10px;
+}
+.table {
+	width: 70%;
+	border-collapse: collapse;
+	border: 1px solid rgba(171, 171, 171, 0.3);
+}
+.table thead {
+	border-bottom: 3px solid #999999;
+	font-weight: 500;
+}
+.table tbody {
+	background-color: rgb(50, 50, 50);
+}
+.table tr td,
+.table tr th {
+	padding: 7px 5px;
+	text-align: center;
+	font-size: clamp(0.7rem, 2vw, 1rem);
+	min-width: 70px;
+}
+.LR > div:nth-child(2) {
+	box-shadow: rgba(154, 157, 224, 0.5) 0px 0px 4px 1px, #fdab30 0px 0px 10px 2px, #fdc41a 0px 0px 2px 3px, rgb(129, 218, 118) 0px 0px 2px 4px !important;
+	background-color: #fdc41a15;
+}
+.LR > div:nth-child(2):before {
+	background-image: url('/image/default/gold.webp');
+}
+@media (max-width: 800px) {
+	.main {
+		padding: 1.5em 2em 1.5em 2em;
+	}
+	.submain {
+		padding: 0;
+	}
+	.submain ul li {
+		padding: 10px 5px;
+	}
+	.table tr td,
+	.table tr th {
+		min-width: none;
+	}
+	.w800n {
+		display: none;
+	}
+	.detail {
+		justify-content: flex-start;
+	}
+	.table {
+		width: 100%;
+	}
+}
+@media (min-width: 801px) {
+	.w800s {
+		display: none;
+	}
+}

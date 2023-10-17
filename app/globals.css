@@ -135,8 +135,14 @@ a {
 	--text-color: #d6d6d6;
 
 	--header-height: 60px;
+	--footer-height: 160px;
 }
 
 body {
 	background-color: var(--header-color);
+}
+@media (max-width: 1000px) {
+	:root {
+		--footer-height: 240px;
+	}
 }

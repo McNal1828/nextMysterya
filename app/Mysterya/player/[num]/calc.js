@@ -6,9 +6,9 @@ function calc(data) {
 	const BB2_ = ['BB', 'HBP'];
 	const AB = data.filter((obj) => !AB6.includes(obj.result)).length;
 	const H = data.filter((obj) => H4.includes(obj.hit_result)).length;
-	const _2B = data.filter((obj) => obj.result == '2B').length;
-	const _3B = data.filter((obj) => obj.result == '3B').length;
-	const _4B = data.filter((obj) => obj.result == 'HR').length;
+	const _2B = data.filter((obj) => obj.hit_result == '2B').length;
+	const _3B = data.filter((obj) => obj.hit_result == '3B').length;
+	const _4B = data.filter((obj) => obj.hit_result == 'HR').length;
 	const LH = data.filter((obj) => H3.includes(obj.hit_result)).length;
 	const BB2 = data.filter((obj) => BB2_.includes(obj.result)).length;
 	const BB = data.filter((obj) => obj.result == 'BB').length;
@@ -44,7 +44,7 @@ export function League({ data, count }) {
 						<th className={styles.w1000n}>{_2B}</th>
 						<th className={styles.w1000n}>{_3B}</th>
 						<th className={styles.w1000n}>{_4B}</th>
-						<th className={`${styles.w1000s} ${styles.w600n}`}>{H + _2B + _3B + _4B}</th>
+						<th className={`${styles.w1000s} ${styles.w600n}`}>{LH}</th>
 						<td className={styles.w600n}>{K}</td>
 						<th className={styles.w1200n}>{BB}</th>
 						<th className={styles.w1200n}>{HBP}</th>
@@ -80,7 +80,7 @@ export function Year({ data, year }) {
 						<th className={styles.w1000n}>{_2B}</th>
 						<th className={styles.w1000n}>{_3B}</th>
 						<th className={styles.w1000n}>{_4B}</th>
-						<th className={`${styles.w1000s} ${styles.w600n}`}>{H + _2B + _3B + _4B}</th>
+						<th className={`${styles.w1000s} ${styles.w600n}`}>{LH}</th>
 						<td className={styles.w600n}>{K}</td>
 						<th className={styles.w1200n}>{BB}</th>
 						<th className={styles.w1200n}>{HBP}</th>
@@ -110,7 +110,7 @@ export function Total({ data, personal_total_count }) {
 			<th className={styles.w1000n}>{_2B}</th>
 			<th className={styles.w1000n}>{_3B}</th>
 			<th className={styles.w1000n}>{_4B}</th>
-			<th className={`${styles.w1000s} ${styles.w600n}`}>{H + _2B + _3B + _4B}</th>
+			<th className={`${styles.w1000s} ${styles.w600n}`}>{LH}</th>
 			<td className={styles.w600n}>{K}</td>
 			<th className={styles.w1200n}>{BB}</th>
 			<th className={styles.w1200n}>{HBP}</th>

@@ -96,15 +96,14 @@
 	background-color: var(--body-color);
 	padding-top: 60px;
 	height: auto;
-	min-height: calc(100vh - 200px - var(--header-height));
-	padding-bottom: 200px;
+	min-height: calc(100vh - var(--footer-height) - var(--header-height));
+	padding-bottom: var(--footer-height);
 }
 .footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	height: 160px;
 	width: 100%;
 	position: absolute;
 	background-color: var(--header-color);

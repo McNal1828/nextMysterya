@@ -13,8 +13,10 @@ export default function Header() {
 		<header className={styles.header}>
 			<div className={styles.fit}>
 				<div className={styles.logo}>
-					<Image src='/image/mysterya/MysteryaLogo.png' width={50} height={40} alt='미스테리야 로고' />
-					<p className={styles.text}>Mysterya</p>
+					<Image src='/image/mysterya/MysteryaLogo.png' width={40} height={40} alt='미스테리야 로고' />
+					<Link className={styles.text} href='/Mysterya/'>
+						Mysterya
+					</Link>
 				</div>
 				<Button />
 			</div>

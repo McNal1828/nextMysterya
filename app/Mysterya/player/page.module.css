@@ -22,3 +22,14 @@
 	flex-wrap: wrap;
 	margin-bottom: 20px;
 }
+@media (max-width: 900px) {
+	.main {
+		padding: 1.5em 2em 1.5em 2em;
+	}
+	.submain {
+		padding: 0;
+	}
+	.submain ul li {
+		padding: 10px 5px;
+	}
+}

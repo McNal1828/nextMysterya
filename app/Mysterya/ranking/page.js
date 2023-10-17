@@ -1,13 +1,22 @@
-import Image from 'next/image';
+import LeagueList from './leagueList';
 import styles from './page.module.css';
-export default function Page() {
+import YearList from './yearList';
+
+export default async function Page({ searchParams }) {
 	return (
 		<div className={styles.main}>
-			<Image className={styles.logo} alt='테스트용이미지' src='/image/mysterya/MysteryaLogo.png' width={520} height={390} />
-			<form className={styles.form}>
-				<input type='text' placeholder='등번호를 입력해 주세요' name='mnum'></input>
-				<input type='submit' value='등록'></input>
-			</form>
+			<p className={styles.title}>랭킹</p>
+			<hr />
+			<div className={styles.submain}>
+				<p className={styles.subtitle}>리그별</p>
+				<hr />
+				<LeagueList />
+			</div>
+			<div className={styles.submain}>
+				<p className={styles.subtitle}>연도별</p>
+				<hr />
+				<YearList />
+			</div>
 		</div>
 	);
 }
