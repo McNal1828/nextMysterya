@@ -31,8 +31,14 @@ export default function Header() {
 					<Link className={styles.text} href={`/Mysterya/player/${mnum}`}>
 						내정보
 					</Link>
+					<Link className={styles.text} href='/Mysterya/record'>
+						경기기록
+					</Link>
 					<Link className={styles.text} href='/Mysterya/ranking'>
 						랭킹
+					</Link>
+					<Link className={`${styles.text} ${styles.w800}`} href='/Mysterya/lineup'>
+						라인업
 					</Link>
 				</nav>
 				<div className={`${styles.search} ${styles.w800}`}>

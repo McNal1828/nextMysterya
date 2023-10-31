@@ -73,7 +73,7 @@ export default function Stat_mine({ mnum }) {
 	const AB6 = ['HBP', 'BB', 'SF', 'SAC', 'I', 'Ob'];
 	const H4 = ['H', '2B', '3B', 'HR'];
 	const H3 = ['2B', '3B', 'HR'];
-	const BB2 = ['BB', 'HBP'];
+	const BB2 = ['BB', 'HBP', 'IBB'];
 	const PA = personal_data.length;
 	const AB = personal_data.filter((obj) => !AB6.includes(obj.result)).length;
 	const H = personal_data.filter((obj) => H4.includes(obj.hit_result)).length;

@@ -13,38 +13,37 @@ export default function PlayerRecent({ player_number }) {
 		return (
 			<>
 				<div className={styles.content}>
-					<div className={styles.scroll}>
-						<div className={styles.title}>
-							<p>최근경기 타석</p>
-							<hr />
-						</div>
-						<table className={styles.table}>
-							<thead>
-								<tr>
-									<th>경기</th>
-									<th>이닝</th>
-									<th>결과</th>
-									<th className={styles.w900n}>공 개수</th>
-									<th>S</th>
-									<th>B</th>
-									<th>O</th>
-									<th className={styles.w600n}>주자</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td className={styles.w900n}>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td>...</td>
-									<td className={styles.w600n}>...</td>
-								</tr>
-							</tbody>
-						</table>
+					<div className={styles.title}>
+						<p>최근경기 타석</p>
+						<hr />
 					</div>
+					<table className={styles.table}>
+						<thead>
+							<tr>
+								<th>경기</th>
+								<th>이닝</th>
+								<th>결과</th>
+								<th className={styles.w900n}>공 개수</th>
+								<th>S</th>
+								<th>B</th>
+								<th>O</th>
+								<th className={styles.w600n}>주자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td className={styles.w900n}>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td className={styles.w600n}>...</td>
+							</tr>
+						</tbody>
+					</table>
+
 					<div>
 						<div className={styles.title}>
 							<p>최근 5경기</p>
@@ -208,6 +207,7 @@ export default function PlayerRecent({ player_number }) {
 		FC: '야수선택',
 		BH: '번트안타',
 		E: '에러',
+		IBB: '고의사구',
 	};
 	const personal_recent = data.recent.map((obj) => obj.recent);
 	const personal_count = data.count;
@@ -243,7 +243,7 @@ export default function PlayerRecent({ player_number }) {
 					<tbody>
 						{personal_recent_1_data.map((data, index) => (
 							<tr key={index}>
-								<td>{data.game_score}</td>
+								<td>{data.opponent}전</td>
 								<td>{data.inning}회</td>
 								<td>{ko[data.hit_result ? data.hit_result : data.result]}</td>
 								<td className={styles.w900n}>{data.final}</td>
@@ -251,8 +251,10 @@ export default function PlayerRecent({ player_number }) {
 								<td>{data.ball}</td>
 								<td>{data.out_count}</td>
 								<td className={styles.w600n}>
-									{data.base1 ? '1,' : ''}
-									{data.base2 ? '2,' : ''}
+									{data.base1 ? '1' : ''}
+									{data.base1 && data.base2 ? ',' : ''}
+									{data.base2 ? '2' : ''}
+									{(data.base1 || data.base2) && data.base3 ? ',' : ''}
 									{data.base3 ? '3' : ''}
 									{data.base1 || data.base2 || data.base3 ? '루' : '주자없음'}
 								</td>

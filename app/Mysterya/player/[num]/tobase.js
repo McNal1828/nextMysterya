@@ -20,7 +20,7 @@ export default function Out({ player_number }) {
 	}
 	const batting_data = data.tobase;
 
-	const BB = batting_data.filter((obj) => obj.result == 'BB');
+	const BB = batting_data.filter((obj) => obj.result == 'BB' || 'IBB');
 	const HBP = batting_data.filter((obj) => obj.result == 'HBP');
 	const H = batting_data.filter((obj) => obj.hit_result == 'H' || obj.hit_result == '2B' || obj.hit_result == '3B' || obj.hit_result == 'HR');
 	const ETC = batting_data.filter((obj) => obj.hit_result == 'E' || obj.hit_result == 'FC' || obj.result == 'Ob');
@@ -70,7 +70,9 @@ export default function Out({ player_number }) {
 									<td>
 										{obj.name}({obj.division})
 									</td>
-									<td>{obj.game_score}</td>
+									<td>
+										{obj.opponent}전 ({new Date(obj.date).toLocaleDateString()})
+									</td>
 									<td>{obj.inning}</td>
 									<td>
 										{obj.strike}s{obj.ball}b{obj.out_count}o
@@ -90,7 +92,7 @@ export default function Out({ player_number }) {
 								key={index}
 								onMouseEnter={(e) => {
 									e.preventDefault();
-									setrecent(array[1].data);
+									setrecent(array[1].data.slice(0, 10));
 									console.log(array[1].data);
 								}}
 							>

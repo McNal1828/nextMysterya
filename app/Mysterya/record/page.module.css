@@ -1,0 +1,42 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	background-color: var(--body-color);
+	color: var(--text-color);
+	margin: 2em 4em 3em 4em;
+}
+.title {
+	font-size: 2.7em;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+}
+.main hr {
+	width: 100%;
+	margin: 1em 0 1em 0;
+}
+.league_details {
+	padding-bottom: 10px;
+}
+.league_title {
+	padding: 10px 30px 10px 30px;
+	font-size: clamp(1rem, 2vw, 1.6rem);
+	cursor: pointer;
+}
+.league_title::marker {
+	font-size: 0;
+}
+.league_details:first-of-type .league_title {
+	padding: 20px 30px 10px 30px;
+}
+.game_list {
+	padding: 10px 0px 10px 50px;
+}
+.game_list li {
+	padding-bottom: 10px;
+}
+.link {
+	text-decoration: none;
+	cursor: pointer;
+	color: var(--text-color);
+}

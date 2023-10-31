@@ -229,10 +229,10 @@ export function Base({ data, base, gp, setbaseGraphic }) {
 }
 
 function calc(data) {
-	const AB6 = ['HBP', 'BB', 'SF', 'SAC', 'I', 'Ob'];
+	const AB6 = ['HBP', 'BB', 'SF', 'SAC', 'I', 'Ob', 'IBB'];
 	const H4 = ['H', '2B', '3B', 'HR'];
 	const H3 = ['2B', '3B', 'HR'];
-	const BB2_ = ['BB', 'HBP'];
+	const BB2_ = ['BB', 'HBP', 'IBB'];
 	const AB = data.filter((obj) => !AB6.includes(obj.result)).length;
 	const H = data.filter((obj) => H4.includes(obj.hit_result)).length;
 	const _2B = data.filter((obj) => obj.result == '2B').length;

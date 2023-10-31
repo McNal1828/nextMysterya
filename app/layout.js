@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import { Nanum_Gothic_Coding } from 'next/font/google';
 import './globals.css';
+import { Providers } from '@/util/mysterya/provider';
 
 export const metadata = {
 	title: 'Create Next App',
@@ -15,7 +16,9 @@ export default function RootLayout({ children }) {
 			<head>
 				<link rel='manifest' href='/manifest.json' />
 			</head>
-			<body className={nanum_Gothic.className}>{children}</body>
+			<body className={nanum_Gothic.className}>
+				<Providers>{children}</Providers>
+			</body>
 			{/* <body>{children}</body> */}
 		</html>
 	);

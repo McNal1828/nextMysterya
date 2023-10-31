@@ -26,7 +26,7 @@ export default function Footer() {
 				<h5>유튜브</h5>
 				<ul>
 					<li>
-						<a href='https://cafe.daum.net/NO1B.CLUBMYSTERY'>00유튜브</a>
+						<a href='https://www.youtube.com/playlist?list=PLAzawgLCC83UD0GVklITF7rdCxwAKHr1S'>경기 재생목록</a>
 					</li>
 				</ul>
 			</div>

@@ -1,14 +1,12 @@
-// import { use } from 'react';
-// import Position from './position';
 import styles from './page.module.css';
+import Lineup from './lineup';
+import Position from './position';
+
 export default function Page() {
-	// const data = use(fetching()).data;
-	return <div className={styles.main}>{/* <Position data={data} /> */}</div>;
+	return (
+		<div className={styles.main} id='canvas'>
+			<Position />
+			<Lineup />
+		</div>
+	);
 }
-// async function fetching(searchParams) {
-// 	let url = 'http://localhost:3000/api/mysterya/player';
-// 	url = encodeURI(url);
-// 	const res = await fetch(url);
-// 	const data = await res.json();
-// 	return data;
-// }

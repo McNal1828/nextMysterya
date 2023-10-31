@@ -4,9 +4,9 @@ import styles from './page.module.css';
 // import { motion } from 'framer-motion';
 export default async function Page({ searchParams }) {
 	let url = process.env.BASE_URL + encodeURI(`/api/mysterya/player/`);
-	if (searchParams.cat == 'number') url = process.env.BASE_URL + encodeURI(`/api/mysterya/player/number/${searchParams.val}`);
-	if (searchParams.cat == 'name') url = process.env.BASE_URL + encodeURI(`/api/mysterya/player/name/${searchParams.val}`);
-	const res = await fetch(url);
+	if (searchParams.cat == 'number' && searchParams.val) url = process.env.BASE_URL + encodeURI(`/api/mysterya/player/number/${searchParams.val}`);
+	if (searchParams.cat == 'name' && searchParams.val) url = process.env.BASE_URL + encodeURI(`/api/mysterya/player/name/${searchParams.val}`);
+	const res = await fetch(url, { cache: 'no-store' });
 	const data_ = await res.json();
 	const data = data_.data;
 	return (

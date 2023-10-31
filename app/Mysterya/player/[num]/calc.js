@@ -1,9 +1,9 @@
 import styles from './content.module.css';
 function calc(data) {
-	const AB6 = ['HBP', 'BB', 'SF', 'SAC', 'I', 'Ob'];
+	const AB6 = ['HBP', 'BB', 'SF', 'SAC', 'I', 'Ob', 'IBB'];
 	const H4 = ['H', '2B', '3B', 'HR'];
 	const H3 = ['2B', '3B', 'HR'];
-	const BB2_ = ['BB', 'HBP'];
+	const BB2_ = ['BB', 'HBP', 'IBB'];
 	const AB = data.filter((obj) => !AB6.includes(obj.result)).length;
 	const H = data.filter((obj) => H4.includes(obj.hit_result)).length;
 	const _2B = data.filter((obj) => obj.hit_result == '2B').length;
@@ -11,12 +11,13 @@ function calc(data) {
 	const _4B = data.filter((obj) => obj.hit_result == 'HR').length;
 	const LH = data.filter((obj) => H3.includes(obj.hit_result)).length;
 	const BB2 = data.filter((obj) => BB2_.includes(obj.result)).length;
-	const BB = data.filter((obj) => obj.result == 'BB').length;
+	const BB = data.filter((obj) => obj.result == 'BB' || obj.result == 'IBB').length;
 	const HBP = data.filter((obj) => obj.result == 'HBP').length;
 	const K = data.filter((obj) => obj.result == 'K').length;
 	const score = data.filter((obj) => obj)[0].game_score;
+	const opponent = data.filter((obj) => obj)[0].opponent;
 
-	return [AB, H, _2B, _3B, _4B, LH, BB2, BB, HBP, K, score];
+	return [AB, H, _2B, _3B, _4B, LH, BB2, BB, HBP, K, score, opponent];
 }
 
 export function League({ data, count }) {
@@ -126,10 +127,10 @@ export function Recent_5({ data, recent }) {
 	if (PA == 0) {
 		return <></>;
 	}
-	const [AB, H, _2B, _3B, _4B, LH, BB2, BB, HBP, K, score] = calc(data_recent);
+	const [AB, H, _2B, _3B, _4B, LH, BB2, BB, HBP, K, score, opponent] = calc(data_recent);
 	return (
 		<tr>
-			<td>{score}</td>
+			<td>{opponent}전</td>
 			<td>{PA}</td>
 			<td className={styles.w600n}>{AB}</td>
 			<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>

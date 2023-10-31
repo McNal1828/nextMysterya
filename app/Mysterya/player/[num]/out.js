@@ -26,8 +26,8 @@ export default function Out({ player_number }) {
 	const GO = batting_data.filter((obj) => obj.hit_result == 'GO');
 	const AO = batting_data.filter((obj) => obj.hit_result == 'AO');
 	const LD = batting_data.filter((obj) => obj.hit_result == 'LD');
-	const DP = batting_data.filter((obj) => obj.hit_result == 'K');
-	const TP = batting_data.filter((obj) => obj.hit_result == 'K');
+	const DP = batting_data.filter((obj) => obj.hit_result == 'DP');
+	const TP = batting_data.filter((obj) => obj.hit_result == 'TP');
 	const FAO = batting_data.filter((obj) => obj.hit_result == 'K');
 	const ko = {
 		SK: '헛스윙삼진',
@@ -86,7 +86,9 @@ export default function Out({ player_number }) {
 									<td>
 										{obj.name}({obj.division})
 									</td>
-									<td>{obj.game_score}</td>
+									<td>
+										{obj.opponent}전 ({new Date(obj.date).toLocaleDateString()})
+									</td>
 									<td>{obj.inning}</td>
 									<td>
 										{obj.strike}s{obj.ball}b{obj.out_count}o
@@ -106,7 +108,7 @@ export default function Out({ player_number }) {
 								key={index}
 								onMouseEnter={(e) => {
 									e.preventDefault();
-									setrecent(array[1].data);
+									setrecent(array[1].data.slice(0, 10));
 									console.log(array[1].data);
 								}}
 							>

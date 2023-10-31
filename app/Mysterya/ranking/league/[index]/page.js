@@ -238,19 +238,22 @@ export default async function Page({ params, searchParams }) {
 				<hr />
 				<div>
 					<div className={styles.cards}>
-						{batting_king.slice(0, 3).map((obj, index) => {
-							return (
-								<Card
-									key={index}
-									name={obj.name}
-									number={obj.number}
-									no={index}
-									data1={['타율', ((obj.H + obj._2B + obj._3B + obj._4B) / (obj.AB ? obj.AB : 1)).toFixed(3)]}
-									data2={['타수', obj.AB]}
-									data3={['안타', obj.H + obj._2B + obj._3B + obj._4B]}
-								/>
-							);
-						})}
+						{batting_king
+							.filter((obj) => obj.AB > 4)
+							.slice(0, 3)
+							.map((obj, index) => {
+								return (
+									<Card
+										key={index}
+										name={obj.name}
+										number={obj.number}
+										no={index}
+										data1={['타율', ((obj.H + obj._2B + obj._3B + obj._4B) / (obj.AB ? obj.AB : 1)).toFixed(3)]}
+										data2={['타수', obj.AB]}
+										data3={['안타', obj.H + obj._2B + obj._3B + obj._4B]}
+									/>
+								);
+							})}
 					</div>
 					<details>
 						<summary className={styles.summary}>전체보기</summary>
@@ -284,19 +287,22 @@ export default async function Page({ params, searchParams }) {
 				<hr />
 				<div>
 					<div className={styles.cards}>
-						{long_batting_king.slice(0, 3).map((obj, index) => {
-							return (
-								<Card
-									key={index}
-									name={obj.name}
-									number={obj.number}
-									no={index}
-									data1={['장타율', ((obj.H + obj._2B * 2 + obj._3B * 3 + obj._4B * 4) / (obj.AB ? obj.AB : 1)).toFixed(3)]}
-									data2={['타수', obj.AB]}
-									data3={['장타', obj._2B + obj._3B + obj._4B]}
-								/>
-							);
-						})}
+						{long_batting_king
+							.filter((obj) => obj.AB > 4)
+							.slice(0, 3)
+							.map((obj, index) => {
+								return (
+									<Card
+										key={index}
+										name={obj.name}
+										number={obj.number}
+										no={index}
+										data1={['장타율', ((obj.H + obj._2B * 2 + obj._3B * 3 + obj._4B * 4) / (obj.AB ? obj.AB : 1)).toFixed(3)]}
+										data2={['타수', obj.AB]}
+										data3={['장타', obj._2B + obj._3B + obj._4B]}
+									/>
+								);
+							})}
 					</div>
 					<details>
 						<summary className={styles.summary}>전체보기</summary>
@@ -336,19 +342,22 @@ export default async function Page({ params, searchParams }) {
 				<hr />
 				<div>
 					<div className={styles.cards}>
-						{on_base_king.slice(0, 3).map((obj, index) => {
-							return (
-								<Card
-									key={index}
-									name={obj.name}
-									number={obj.number}
-									no={index}
-									data1={['출루율', ((obj.H + obj._2B + obj._3B + obj._4B + obj.BB + obj.HBP) / (obj.PA ? obj.PA : 1)).toFixed(3)]}
-									data2={['안타', obj.H + obj._2B + obj._3B + obj._4B]}
-									data3={['사사구', obj.BB + obj.HBP]}
-								/>
-							);
-						})}
+						{on_base_king
+							.filter((obj) => obj.PA > 4)
+							.slice(0, 3)
+							.map((obj, index) => {
+								return (
+									<Card
+										key={index}
+										name={obj.name}
+										number={obj.number}
+										no={index}
+										data1={['출루율', ((obj.H + obj._2B + obj._3B + obj._4B + obj.BB + obj.HBP) / (obj.PA ? obj.PA : 1)).toFixed(3)]}
+										data2={['안타', obj.H + obj._2B + obj._3B + obj._4B]}
+										data3={['사사구', obj.BB + obj.HBP]}
+									/>
+								);
+							})}
 					</div>
 					<details>
 						<summary className={styles.summary}>전체보기</summary>

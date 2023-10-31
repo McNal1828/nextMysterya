@@ -15,14 +15,19 @@ function calc(data, recent) {
 	const BB = data_recent.filter((obj) => BB2.includes(obj.result)).length;
 	const K = data_recent.filter((obj) => obj.result == 'K').length;
 	const score = data_recent.filter((obj) => obj)[0].game_score;
-	return [PA, AB, H, LH, BB, K, score];
+	const opponent = data_recent.filter((obj) => obj)[0].opponent;
+	const win = data_recent.filter((obj) => obj)[0].win;
+	return [PA, AB, H, LH, BB, K, score, opponent, win];
 }
 function Table({ data, recent }) {
 	if (data.filter((obj) => obj.recent == recent).length == 0) return <></>;
-	const [PA, AB, H, LH, BB, K, score] = calc(data, recent);
+	const [PA, AB, H, LH, BB, K, score, opponent, win] = calc(data, recent);
 	return (
 		<tr>
-			<td>{score}</td>
+			<td>{opponent}전</td>
+			<td>
+				{score}({win ? '승' : '패'})
+			</td>
 			<td className={styles.w900}>{AB}</td>
 			<td>{(H / (AB ? AB : 1)).toFixed(3)}</td>
 			<td className={styles.w900}>{((H + BB) / (AB ? AB : 1)).toFixed(3)}</td>
@@ -96,7 +101,8 @@ export default function Stat_Team() {
 		<table className={styles.table}>
 			<thead>
 				<tr>
-					<th>최근 경기</th>
+					<th>최근 3경기</th>
+					<th>점수(결과)</th>
 					<th className={styles.w900}>타수</th>
 					<th>팀타율</th>
 					<td className={styles.w900}>팀출루율</td>
