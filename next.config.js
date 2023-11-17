@@ -6,6 +6,16 @@ const nextConfig = withPWA({
 	experimental: {
 		serverComponentsExternalPackages: ['mysql2'],
 	},
+	images: {
+		remotePatterns: [
+			{
+				hostname: '*.mcnal.net',
+				pathname: '/**',
+				port: '',
+				protocol: 'https',
+			},
+		],
+	},
 });
 
 module.exports = nextConfig;
