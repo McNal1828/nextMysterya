@@ -1,4 +1,4 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+// import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import styles from './page.module.css';
 import SupaLogin from './supalogin';
 import { cookies } from 'next/headers';
@@ -7,16 +7,17 @@ import Image from 'next/image';
 import LoginBtn from './loginBtn';
 import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]/route';
+import TestSession from './testsession';
 
-const supabase = createServerComponentClient({ cookies });
+// const supabase = createServerComponentClient({ cookies });
 export default async function Page() {
-	const {
-		data: { user },
-	} = await supabase.auth.getUser();
-	let { data: test, error } = await supabase.from('test').select('*');
-	const testdata = test;
-	const session = await getServerSession(authOptions);
-	console.log(session);
+	// const {
+	// 	data: { user },
+	// } = await supabase.auth.getUser();
+	// let { data: test, error } = await supabase.from('test').select('*');
+	// const testdata = test;
+	// const session = await getServerSession(authOptions);
+	// console.log(session);
 	return (
 		<div className={styles.text}>
 			<h2>app/page.js</h2>
@@ -26,6 +27,7 @@ export default async function Page() {
 			{/* <div>{user?.id}</div> */}
 			{/* <Imagetest /> */}
 			<LoginBtn />
+			<TestSession />
 			<p></p>
 		</div>
 	);

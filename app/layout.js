@@ -1,7 +1,8 @@
 import localFont from 'next/font/local';
 import { Nanum_Gothic_Coding } from 'next/font/google';
 import './globals.css';
-import { Providers } from '@/util/mysterya/provider';
+import { StoreProviders } from '@/util/mysterya/provider';
+import { SessionProviders } from '@/util/prisma/provider';
 
 export const metadata = {
 	title: 'Create Next App',
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
 				<link rel='manifest' href='/manifest.json' />
 			</head>
 			<body className={nanum_Gothic.className}>
-				<Providers>{children}</Providers>
+				<SessionProviders>
+					<StoreProviders>{children}</StoreProviders>
+				</SessionProviders>
 			</body>
 			{/* <body>{children}</body> */}
 		</html>

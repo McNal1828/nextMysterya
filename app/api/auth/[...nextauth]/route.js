@@ -2,7 +2,10 @@ import { SupabaseAdapter } from '@auth/supabase-adapter';
 import NextAuth from 'next-auth';
 import DiscordProvider from 'next-auth/providers/discord';
 import GithubProvider from 'next-auth/providers/github';
+import { PrismaAdapter } from '@auth/prisma-adapter';
+import { PrismaClient } from '@prisma/client';
 
+const prisma = new PrismaClient();
 /**
  * @type {import('next-auth').AuthOptions}
  */
@@ -19,10 +22,7 @@ export const authOptions = {
 		}),
 	],
 	// DB설정
-	adapter: SupabaseAdapter({
-		url: process.env.NEXT_PUBLIC_SUPABASE_URL,
-		secret: process.env.SUPABASE_SERVICE_ROLE_KEY,
-	}),
+	adapter: PrismaAdapter(prisma),
 	session: {
 		// default는 jwt, apapter옵션을 사용하면 자동으로 database가 default가 됨
 		// jwt를 입력해서 강제로 jwt를 사용할수도 있음.
