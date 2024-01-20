@@ -14,6 +14,12 @@ const nextConfig = withPWA({
 				port: '',
 				protocol: 'https',
 			},
+			{
+				hostname: 'cdn.discordapp.com',
+				pathname: '/**',
+				port: '',
+				protocol: 'https',
+			},
 		],
 	},
 });

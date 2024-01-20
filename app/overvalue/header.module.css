@@ -1,0 +1,56 @@
+.header {
+	/* display: flex; */
+	text-align: left;
+	position: fixed !important;
+	z-index: 60;
+	width: 100%;
+	padding: calc(0.7vw + 12px) 0 calc(0.7vw + 12px) calc(0.7vw + 12px);
+	transition: 0.2s ease;
+}
+.headeractive {
+	padding: calc(-0.2vw + 12px) 0 calc(0.7vw + 12px) calc(0.7vw + 12px) !important;
+	transition: 0.2s ease;
+}
+.inactive {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 340px;
+	height: 105px;
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+.active {
+	width: 180px !important;
+	height: 60px !important;
+}
+
+.navbar {
+	float: right;
+	background-color: rgba(255, 255, 255, 0.95);
+	padding: 0 60px 0 20px;
+	border-radius: 50px 0 0 50px;
+}
+.navbar ul {
+	display: flex;
+}
+.navbar li a,
+.navbar li .btn {
+	display: block;
+	line-height: 3em;
+	font-size: 17px;
+	font-weight: 600;
+	color: #a593d1;
+	text-align: center;
+	padding: 0 14px;
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+.headeractive .navbar li a,
+.headeractive .navbar li .btn {
+	font-size: 14px;
+}
+.navbtn {
+	display: none;
+}

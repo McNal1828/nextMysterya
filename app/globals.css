@@ -139,7 +139,7 @@ a {
 }
 
 body {
-	background-color: var(--header-color);
+	/* background-color: var(--header-color); */
 }
 @media (max-width: 1000px) {
 	:root {
