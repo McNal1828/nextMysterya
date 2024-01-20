@@ -1,6 +1,13 @@
 import Image from 'next/image';
 import styles from './display.module.css';
 import Position from './position';
+/**
+ *
+ * @param {Object} param
+ * @param {{H: {}, M:[], S:[], C: {}, R:[]}} param.data
+ * @param {{player_number : Number, name : string, birth_year : Number}[]} param.player
+ * @returns
+ */
 export default function Showdata({ data, player }) {
 	const ko = {
 		K: '삼진',
@@ -28,23 +35,20 @@ export default function Showdata({ data, player }) {
 	const base = { 1: '1루', 2: '2루', 3: '3루', 4: '홈' };
 	const position_kr = ['투수', '포수 및 뒤', '1루', '2루', '3루', '유격수', '좌익수', '중견수', '우익수', '좌측파울', '우측파울'];
 	const mwhy = { n: '', w: '폭투', pb: '포일', E: '에러, ' };
-	console.log(player);
 	return (
 		<>
 			<div className={styles.info}>
-				<div style={{ display: 'flex' }}>
-					<div className={styles.player}>
-						<div className={styles.images}>
-							<Image alt='선수이미지' src={`/image/mysterya/profile/${data.C.player_number}.jpg`} fill className={styles.img} />
-						</div>
-						<div className={`${styles.title} ${styles.w500}`}>
-							<p>No.{data.C.player_number}</p>
-							<p>{data.C.name}</p>
-						</div>
+				<div className={styles.player}>
+					<div className={styles.playerimage}>
+						<Image alt='선수이미지' src={`/image/mysterya/profile/${data.C.player_number}.jpg`} fill className={styles.img} />
 					</div>
-					<Position />
+					<div className={`${styles.title} ${styles.w500}`}>
+						<p>No.{data.C.player_number}</p>
+						<p>{data.C.name}</p>
+					</div>
 				</div>
-				<div className={`${styles.image}`}>
+				<Position />
+				<div className={`${styles.ballcounts}`}>
 					<p>
 						<span>B</span>
 						{[...Array(data.C.ball)].map((n, index) => (
@@ -65,11 +69,13 @@ export default function Showdata({ data, player }) {
 					</p>
 				</div>
 			</div>
+
 			{data.S.map((obj1, index) => {
 				return (
 					<div key={index} className={styles.listcontent}>
 						<p>
-							{obj1.player_number}번 {base[obj1.steel]} 도루 {obj1.out ? '실패' : '성공'}
+							{obj1.player_number}번 {player.find((ele) => ele.player_number == obj1.player_number).name} {base[obj1.steel]} 도루{' '}
+							{obj1.out ? '실패' : '성공'}
 						</p>
 						{obj1.note ? <p>{obj1.note}</p> : <></>}
 					</div>
@@ -88,14 +94,15 @@ export default function Showdata({ data, player }) {
 			) : (
 				<></>
 			)}
-			{data.M.map((obj1, index) => {
+			{data.M.map((obj2, index) => {
 				return (
 					<div key={index} className={styles.listcontent}>
 						<p>
-							{obj1.player_number}번 {base[obj1.move]}이동 {obj1.out == 1 ? '아웃' : ''}
+							{obj2.player_number}번 {player.find((ele) => ele.player_number == obj2.player_number).name} {base[obj2.move]}이동{' '}
+							{obj2.out == 1 ? '아웃' : ''}
 						</p>
 						<p>
-							{mwhy[obj1.why]} {obj1.note}
+							{mwhy[obj2.why]} {obj2.note}
 						</p>
 					</div>
 				);
@@ -113,10 +120,12 @@ export default function Showdata({ data, player }) {
 				<p>{data.C.call}</p>
 			</div> */}
 
-			{data.R.map((ele, index) => {
+			{data.R.map((ele1, index) => {
 				return (
 					<div key={index} className={styles.listcontent}>
-						<p>{ele}번 득점</p>
+						<p>
+							{ele1}번 {player.find((ele) => ele.player_number == ele1).name} 득점
+						</p>
 					</div>
 				);
 			})}

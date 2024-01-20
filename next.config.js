@@ -14,6 +14,12 @@ const nextConfig = withPWA({
 				port: '',
 				protocol: 'https',
 			},
+			{
+				hostname: 'image.tmdb.org',
+				pathname: '/**',
+				port: '',
+				protocol: 'https',
+			},
 		],
 	},
 });
