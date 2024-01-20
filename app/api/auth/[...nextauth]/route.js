@@ -1,9 +1,10 @@
-import { SupabaseAdapter } from '@auth/supabase-adapter';
 import NextAuth from 'next-auth';
 import DiscordProvider from 'next-auth/providers/discord';
 import GithubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import { PrismaClient } from '@prisma/client';
+import { NextRequest } from 'next/server';
 
 const prisma = new PrismaClient();
 /**
@@ -20,6 +21,10 @@ export const authOptions = {
 			clientId: process.env.GITHUB_CLIENT_ID,
 			clientSecret: process.env.GITHUB_CLIENT_SECRET,
 		}),
+		GoogleProvider({
+			clientId: process.env.GOOGLE_CLIENT_ID,
+			clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+		}),
 	],
 	// DB설정
 	adapter: PrismaAdapter(prisma),
@@ -28,7 +33,7 @@ export const authOptions = {
 		// jwt를 입력해서 강제로 jwt를 사용할수도 있음.
 		// jwt로 설정하면 session cookie에 암호화된 JWT저장됨.
 		// database로 설정하면 session cookie에 DB매칭용 sessionToken만 저장됨
-		strategy: 'database',
+		strategy: 'jwt',
 		// 세션유지기한
 		maxAge: 1 * 24 * 60 * 60,
 		// 세션확장을 위한 DB업데이트 주기, JWT쓰면 적용안됨
@@ -54,21 +59,39 @@ export const authOptions = {
 	//     verifyRequest: '/auth/verify-request', // (used for check email message)
 	//     newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
 	//   },
-	// // callback기능설정가능
-	// callbacks: {
-	//     async signIn({ user, account, profile, email, credentials }) {
-	//       return true
-	//     },
-	//     async redirect({ url, baseUrl }) {
-	//       return baseUrl
-	//     },
-	//     async session({ session, token, user }) {
-	//       return session
-	//     },
-	//     async jwt({ token, user, account, profile, isNewUser }) {
-	//       return token
-	//     }
-	//   },
+	// callback기능설정가능
+	callbacks: {
+		async signIn({ user, account, profile, email, credentials }) {
+			console.log(user);
+			console.log(account);
+			console.log(profile);
+			console.log(email);
+			console.log(credentials);
+			return true;
+		},
+		async redirect({ url, baseUrl }) {
+			console.log(url);
+			console.log(baseUrl);
+			return url;
+		},
+		// 유저 세션이 조회될 때 마다 실행되는 코드
+		async session({ session, token, user }) {
+			console.log(session);
+			console.log(token);
+			console.log(user);
+			return session;
+		},
+		// jwt 만들 때 실행되는 코드
+		// user변수는 DB의 유저정보담겨있고 token.user에 뭐 저장하면 jwt에 들어갑니다.
+		async jwt({ token, user, account, profile, isNewUser }) {
+			console.log(token);
+			console.log(user);
+			console.log(account);
+			console.log(profile);
+			console.log(isNewUser);
+			return token;
+		},
+	},
 	// // 로그같이 특정 event발생이후 특정작업을 진행할 수 있음
 	// events: {
 	//     async signIn(message) { /* on successful sign in */ },
@@ -100,6 +123,5 @@ export const authOptions = {
 	// hash token에 사용되는 무작위 문자열, 자동으로 `NEXTAUTH_SECRET`사용
 	// secret: process.env.NEXTAUTH_SECRET
 };
-
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };

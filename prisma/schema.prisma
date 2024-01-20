@@ -55,3 +55,15 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model MysteryaData{
+  id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  email  String
+  backnumber String?
+}
+model OvervalueData{
+  id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  email  String
+  battletag String?
+  expose Boolean @default(false)
+}

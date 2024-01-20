@@ -6,7 +6,7 @@ export default function LoginBtn() {
 		<div>
 			<button
 				onClick={(e) => {
-					signIn();
+					signIn('discord', { callbackUrl: 'http://localhost:3000/api/mysterya' });
 				}}
 			>
 				로그인

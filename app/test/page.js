@@ -1,11 +1,9 @@
-import { supabase } from '@/util/supabase/start';
-import Supa from './supatest';
+import TestSession from './testsession';
 
 export default async function Page() {
-	const { data, error } = await supabase.auth.getSession();
 	return (
 		<div>
-			<Supa />
+			<TestSession />
 		</div>
 	);
 }

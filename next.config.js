@@ -15,7 +15,7 @@ const nextConfig = withPWA({
 				protocol: 'https',
 			},
 			{
-				hostname: 'image.tmdb.org',
+				hostname: 'cdn.discordapp.com',
 				pathname: '/**',
 				port: '',
 				protocol: 'https',
