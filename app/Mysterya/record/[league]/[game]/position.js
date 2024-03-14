@@ -9,9 +9,10 @@ export default function Position({ data }) {
 	const base_left = ['66%', '50%', '34%', '50%'];
 
 	return (
-		<div className={`${styles.ground} ${styles.w500n}`}>
-			<Image src={'/image/mysterya/field.png'} alt='야구장' fill={true} quality={100} />
-			{/* {lineup.map((ele, index) => {
+		<div className={styles.wrapper}>
+			<div className={`${styles.ground} ${styles.w500n}`}>
+				<Image src={'/image/mysterya/field.png'} alt='야구장' fill={true} quality={100} />
+				{/* {lineup.map((ele, index) => {
 				if (position_[index] != 0) {
 					return (
 						<div key={index} className={styles.positionPic} style={{ left: left[position_[index] - 1], top: top[position_[index] - 1] }}>
@@ -20,6 +21,7 @@ export default function Position({ data }) {
 					);
 				}
 			})} */}
+			</div>
 		</div>
 	);
 }

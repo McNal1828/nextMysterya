@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import Showdata from './display';
+import styles from './container.module.css';
 
 export default function Container({ league, game }) {
 	const [pitches, setpitches] = useState(0);
@@ -63,26 +64,27 @@ export default function Container({ league, game }) {
 		}
 	});
 	const dfitches = Object.keys(filtered_);
-	console.log(filtered_[dfitches[pitches]]);
+	// console.log(filtered_);
+	// console.log(filtered_[dfitches[pitches]]);
 	return (
-		<div>
+		<div style={{ position: 'relative' }}>
 			<Showdata data={filtered_[dfitches[pitches]]} player={player} />
-			<div style={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between' }}>
-				<button
-					onClick={(e) => {
-						if (pitches != 0) setpitches(pitches - 1);
-					}}
-				>
-					이전
-				</button>
-				<button
-					onClick={(e) => {
-						if (pitches != dfitches.length - 1) setpitches(pitches + 1);
-					}}
-				>
-					다음
-				</button>
-			</div>
+			<button
+				onClick={(e) => {
+					if (pitches != 0) setpitches(pitches - 1);
+				}}
+				style={{ position: 'absolute', top: '10vw', left: '-1vw' }}
+			>
+				이전
+			</button>
+			<button
+				onClick={(e) => {
+					if (pitches != dfitches.length - 1) setpitches(pitches + 1);
+				}}
+				style={{ position: 'absolute', top: '10vw', right: '-1vw' }}
+			>
+				다음
+			</button>
 		</div>
 	);
 }
