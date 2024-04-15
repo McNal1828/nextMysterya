@@ -6,11 +6,11 @@ export default function Footer() {
 	return (
 		<footer className={`${styles.footer} ${styles.text} `}>
 			<div className={`${styles.large_half} ${styles.mid_full} ${styles.box}`}>
-				<h5>2023년 미스테리야</h5>
+				<h5>2024년 미스테리야</h5>
 				<ul>
-					<li>감독 : 박재현</li>
-					<li>주장 : 이창현</li>
-					<li>총무 : 홍성운</li>
+					<li>감독 : 이성재</li>
+					<li>주장 : 최웅수</li>
+					<li>총무 : 김선홍</li>
 					<li>사이트 관리자 : 신동한</li>
 				</ul>
 			</div>
