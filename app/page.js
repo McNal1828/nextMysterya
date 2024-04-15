@@ -31,7 +31,13 @@ export default async function Page() {
 								Notion
 							</a>
 							<h2>청년취업사관학교</h2>
-							<a className={`${styles.button} ${styles.buttonDefault}`} href='#' target='_blank' rel='noopener' role='button'>
+							<a
+								className={`${styles.button} ${styles.buttonDefault}`}
+								href='https://sesac2.mcnal.net/'
+								target='_blank'
+								rel='noopener'
+								role='button'
+							>
 								<img className={styles.icon} aria-hidden='true' src='image/icons/aws.svg' alt='Notion Logo' />
 								상권분석
 							</a>
