@@ -24,14 +24,39 @@ export default async function Page() {
                 <img className={styles.icon} aria-hidden='true' src='image/icons/notion.svg' alt='Notion Logo' />
                 Notion
               </a>
-              <h2>청년취업사관학교</h2>
-              <a className={`${styles.button} ${styles.buttonDefault}`} href='https://sesac2.mcnal.net/' target='_blank' rel='noopener' role='button'>
+              <h2>SeSAC AWS 부트캠프</h2>
+              <a
+                className={`${styles.button} ${styles.buttonDefault}`}
+                href='https://mcnal1828.notion.site/f61ab31eea814143be92b0c7c9d87837'
+                target='_blank'
+                rel='noopener'
+                role='button'
+                style={{ wordWrap: 'break-word' }}
+              >
                 <img className={styles.icon} aria-hidden='true' src='image/icons/aws.svg' alt='Notion Logo' />
-                상권분석
+                서버리스 모니터링 시스템 구축
               </a>
-              <a className={`${styles.button} ${styles.buttonDefault}`} href='https://sesac3.mcnal.net/' target='_blank' rel='noopener' role='button'>
+              <a
+                className={`${styles.button} ${styles.buttonDefault}`}
+                href='https://mcnal1828.notion.site/ff43e209382147a8bed1af1a434af957'
+                target='_blank'
+                rel='noopener'
+                role='button'
+                style={{ wordWrap: 'break-word' }}
+              >
                 <img className={styles.icon} aria-hidden='true' src='image/icons/aws.svg' alt='Notion Logo' />
-                슈슈슉
+                CI/CD pipeline 구축, AWS location service
+              </a>
+              <a
+                className={`${styles.button} ${styles.buttonDefault}`}
+                href='https://mcnal1828.notion.site/495bc276564344d098dc567d83522cc2'
+                target='_blank'
+                rel='noopener'
+                role='button'
+                style={{ wordWrap: 'break-word' }}
+              >
+                <img className={styles.icon} aria-hidden='true' src='image/icons/aws.svg' alt='Notion Logo' />
+                AWS IVS를 활용한 실시간 스트리밍 서비스
               </a>
               <h2>개인프로젝트</h2>
               <a className={`${styles.button} ${styles.buttonDefault}`} href='https://mcnal.net/Mysterya' target='_blank' rel='noopener' role='button'>
